@@ -16,48 +16,57 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            GetTwitterInfo.Twitter user = new GetTwitterInfo.Twitter();
+            
             var twitter = new Twitter
             {
-                OAuthConsumerKey = "put keys here",
-                OAuthConsumerSecret = "put keys here"
+                OAuthConsumerKey = "Pust stuff here",
+                OAuthConsumerSecret = "Pust stuff here"
             };
 
 
-            bool selection = Validator.OneOrTwo();
-           
-            if(selection == true)
+            int selection = Validator.NumValidation();
+            Console.Clear();
+
+            switch (selection)
             {
-                Console.WriteLine("What would you like to write to Twitter?");
-                string temp = Console.ReadLine();
+                case 1:
+                    Console.WriteLine("What would you like to write to Twitter?");
+                    string temp = Console.ReadLine();
 
-                if (temp.Length < 280 && temp.Length > 0)
-                {
-                    PostToTwitter.Message(temp);
-                }
+                    if (temp.Length < 280 && temp.Length > 0)
+                    {
+                        Twitter.Message(temp);
+                    }
 
-                Console.WriteLine("You posted to twitter.");
+                    Console.WriteLine("You posted to twitter.");
+                    break;
+                case 2:
+                    IEnumerable<string> tweets = twitter.GetTweets("GCSocialMediaT1", 10).Result;
+                    foreach (var t in tweets)
+                    {
+                        Console.WriteLine(t + "\n");
+                    }
+
+                    break;
+                case 3:
+                    List<string> tweetAnalyticRecent = twitter.GetMostRecentPostData("1103777662433144832").Result;
+                    foreach (string items in tweetAnalyticRecent)
+                    {
+                        Console.WriteLine(items);
+                    }
+                    break;
+                case 4:
+                    List<TwitObject> tweetAnalyticTopNum = twitter.GetTopRecentPostData("GCSocialMediaT1", 20).Result;
+                    foreach (TwitObject items in tweetAnalyticTopNum)
+                    {
+                        Console.WriteLine(items.ToString());
+                    }
+                    Console.ReadKey();
+                    break;
+                default:
+                    break;
             }
-            else if (selection == false)
-            {
-                //IEnumerable<dynamic> tweets = twitter.GetLikes("1103777662433144832").Result;
-                List<string> tweetAnalytics = twitter.GetLikes("1103777662433144832").Result;
-                foreach (string items in tweetAnalytics)
-                {
-                    Console.WriteLine(items);
-                }
-                Console.ReadKey();
-            }
-            //else if(selection == false)
-            //{
-            //    IEnumerable<string> tweets = twitter.GetTweets("GCSocialMediaT1", 10).Result;
-            //    foreach (var t in tweets)
-            //    {
-            //        Console.WriteLine(t + "\n");
-            //    }
-            //    Console.ReadKey();
-            //}
-
+            Console.ReadKey();
         }
     }
 }

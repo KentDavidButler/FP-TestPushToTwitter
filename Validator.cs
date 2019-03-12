@@ -44,21 +44,20 @@ namespace ConsoleApp1
 
         }
 
-        public static bool OneOrTwo()
+        public static int NumValidation()
         {
             string input;
             while (true)
             {
+                
                 Console.WriteLine("Press one to post to twitter");
-                Console.WriteLine("Press two to pull from twitter");
+                Console.WriteLine("Press two to pull list of twitter posts");
+                Console.WriteLine("Press three to pull most recent post analytics");
+                Console.WriteLine("Press four to pull top 20 post analytics");
                 input = Console.ReadLine().ToLower();
-                if (String.Equals("1", input))
+                if (int.TryParse(input, out int data))
                 {
-                    return true;
-                }
-                else if (String.Equals("2", input))
-                {
-                    return false;
+                    return data;
                 }
                 else
                 {
