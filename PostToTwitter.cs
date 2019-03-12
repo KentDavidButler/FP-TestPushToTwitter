@@ -16,10 +16,10 @@ namespace ConsoleApp1
     {
         public static void Message(string text)
         {
-            var oauth_token = <"put stuff here">
-            var oauth_token_secret =  <"put stuff here">
-            var oauth_consumer_key =  <"put stuff here">
-            var oauth_consumer_secret =  <"put stuff here">
+            var oauth_token = "1103777662433144832-5KmCUZbNaQW30Oi9lPkniPLc0WyUJs";
+            var oauth_token_secret = "rzqFLMHq03Xg6Tcv7BObSHYUIoEEIgcU4CHVuqNHtKqKe";
+            var oauth_consumer_key = "ZKQO3mOrtZSvgD0YPDnyZ4iOf";
+            var oauth_consumer_secret = "NNvgVh8sFBEroWqk3gPF775hTQ3mNGtBNQhdrXEX3MIDiub39C";
 
             var oauth_version = "1.0";
             var oauth_signature_method = "HMAC-SHA1";

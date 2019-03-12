@@ -206,7 +206,10 @@ C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\System.Xml.Xml
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\System.Xml.XPath.dll
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\System.Xml.XPath.XDocument.dll
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Json.Net.dll
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\RestSharp.dll
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\RestSharp.xml
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.exe.config
@@ -214,3 +217,5 @@ C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.cs
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.csproj.CopyComplete
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.exe
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.pdb
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\EntityFramework.xml
