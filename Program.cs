@@ -19,8 +19,8 @@ namespace ConsoleApp1
             GetTwitterInfo.Twitter user = new GetTwitterInfo.Twitter();
             var twitter = new Twitter
             {
-                OAuthConsumerKey = "ZKQO3mOrtZSvgD0YPDnyZ4iOf",
-                OAuthConsumerSecret = "NNvgVh8sFBEroWqk3gPF775hTQ3mNGtBNQhdrXEX3MIDiub39C"
+                OAuthConsumerKey = "put keys here",
+                OAuthConsumerSecret = "put keys here"
             };
 
 
