@@ -18,6 +18,53 @@ namespace ConsoleApp1
         public string OAuthConsumerSecret { get; set; }
         public string OAuthConsumerKey { get; set; }
 
+        public async Task<List<TwitObject>> GetSpecificUserPost(string userName, string accessToken = null)
+        {
+            int count = 5;
+            List<TwitObject> twitData = new List<TwitObject> { };
+            List<dynamic> jsonData = new List<dynamic> { };
+            if (accessToken == null)
+            {
+                accessToken = await GetAccessToken();
+            }
+
+            var requestUserTimeline = new HttpRequestMessage(HttpMethod.Get, string.Format("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name={0}&count={1}", userName, count));
+            requestUserTimeline.Headers.Add("Authorization", "Bearer " + accessToken);
+            var httpClient = new HttpClient();
+            HttpResponseMessage responseUserTimeLine = await httpClient.SendAsync(requestUserTimeline);
+            var serializer = new JavaScriptSerializer();
+            dynamic json = serializer.Deserialize<object>(await responseUserTimeLine.Content.ReadAsStringAsync());
+            var enumerableTweets = (json as IEnumerable<dynamic>);
+
+            if (enumerableTweets == null)
+            {
+                return null;
+            }
+            else
+            {
+                for (int i = 0; i < (enumerableTweets.Count() - 1); i++)
+                {
+                    jsonData.Add(enumerableTweets.ElementAt(i));
+                    if (i >= 20)
+                    { break; }
+                }
+                foreach (var item in jsonData)
+                {
+
+                    twitData.Add(new TwitObject(
+                        (string)item["text"],
+                        (string)(item["favorite_count"] + ""),
+                        (string)(item["retweet_count"] + ""),
+                        (string)(item["entities"]["hashtags"] + "")
+                        ));
+                }
+                Console.WriteLine("Tset");
+
+            }
+
+            return twitData;
+        }
+
         public async Task<List<string>> GetMostRecentPostData(string userName, string accessToken = null)
         {
             List<string> stringData = new List<string>{ };
@@ -117,10 +164,10 @@ namespace ConsoleApp1
         public static void Message(string text, string accessToken = null)
         {
 
-            var oauth_token = "Pust stuff here";
-            var oauth_token_secret = "Pust stuff here";
-            var oauth_consumer_key = "Pust stuff here";
-            var oauth_consumer_secret = "Pust stuff here";
+            var oauth_token = "1103777662433144832-5KmCUZbNaQW30Oi9lPkniPLc0WyUJs";
+            var oauth_token_secret = "rzqFLMHq03Xg6Tcv7BObSHYUIoEEIgcU4CHVuqNHtKqKe";
+            var oauth_consumer_key = "ZKQO3mOrtZSvgD0YPDnyZ4iOf";
+            var oauth_consumer_secret = "NNvgVh8sFBEroWqk3gPF775hTQ3mNGtBNQhdrXEX3MIDiub39C";
 
             var oauth_version = "1.0";
             var oauth_signature_method = "HMAC-SHA1";

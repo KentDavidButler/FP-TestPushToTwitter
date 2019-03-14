@@ -54,6 +54,7 @@ namespace ConsoleApp1
                 Console.WriteLine("Press two to pull list of twitter posts");
                 Console.WriteLine("Press three to pull most recent post analytics");
                 Console.WriteLine("Press four to pull top 20 post analytics");
+                Console.WriteLine("Press five to pull specific user post");
                 input = Console.ReadLine().ToLower();
                 if (int.TryParse(input, out int data))
                 {

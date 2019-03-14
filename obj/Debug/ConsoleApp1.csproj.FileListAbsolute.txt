@@ -219,3 +219,5 @@ C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.ex
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\obj\Debug\ConsoleApp1.pdb
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\EntityFramework.dll
 C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Facebook.dll
+C:\Users\Administrator\Desktop\FinalTemp\PostTooTwitter\bin\Debug\Facebook.xml

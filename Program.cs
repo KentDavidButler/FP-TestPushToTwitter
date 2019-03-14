@@ -16,14 +16,16 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+
             
             var twitter = new Twitter
             {
-                OAuthConsumerKey = "Pust stuff here",
-                OAuthConsumerSecret = "Pust stuff here"
+                OAuthConsumerKey = "<TOMMY DO STUFF HERE>",
+               OAuthConsumerSecret = "<TOMMY DO STUFF HERE>"
             };
 
-
+            //const string facebookApiId = "1222201867957460";
+            //const string facebookApiSecret = "KQrqMPlY5_9i4QfAruapy6GdDn4";
             int selection = Validator.NumValidation();
             Console.Clear();
 
@@ -61,7 +63,18 @@ namespace ConsoleApp1
                     {
                         Console.WriteLine(items.ToString());
                     }
-                    Console.ReadKey();
+
+                    break;
+                case 5:
+                    Console.WriteLine("What Twitter Handle would you like to look at?");
+                    string twitHandle = Console.ReadLine();
+
+                    List<TwitObject> tweetAnalyticTopNum2 = twitter.GetSpecificUserPost(twitHandle).Result;
+                    foreach (TwitObject items in tweetAnalyticTopNum2)
+                    {
+                        Console.WriteLine(items.ToString());
+                    }
+
                     break;
                 default:
                     break;
